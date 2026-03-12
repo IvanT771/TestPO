@@ -1,19 +1,20 @@
-package Task5;
+package Task5.src;
 
 import javax.swing.*;
 import java.awt.event.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-class MyFrame2 extends JFrame implements ItemListener {
+class MyFrame extends JFrame implements ItemListener {
 
     private JComboBox CB;
     private JButton B;
     private JLabel L;
     private String[] animals = new String[]{"Принтер", "Сканер", "Телефон", "Планшет"};
     private String[] files = new String[]{"printer.jpg", "scaner.jpg", "телефон.jpg", "планшет.jpg"};
-    private String path = "c:\\Users\\Dudrrillo\\Documents\\РиСИСиИТ\\books\\pictures";
+    private String path = System.getProperty("user.dir") + "\\" + "pictures";
     private ImageIcon[] imgs;
 
-    MyFrame2() {
+    MyFrame() {
         super("Раскрывающийся список");
         setBounds(250, 250, 400, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -51,6 +52,6 @@ class MyFrame2 extends JFrame implements ItemListener {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new MyFrame2());
+        SwingUtilities.invokeLater(() -> new MyFrame());
     }
 }
